@@ -4,6 +4,7 @@ let queryString = require("querystring");
 let url = require('url');
 
 const API_KEY = process.env.FLICKR_API_KEY;
+const PORT = process.env.PORT;
 
 let proxy = httpProxy.createProxyServer();
 
@@ -37,4 +38,5 @@ let server = http.createServer(function(req, res) {
   });
 });
 
-server.listen(5050);
+console.log(`listening on port ${PORT}`);
+server.listen(PORT);
